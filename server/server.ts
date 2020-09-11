@@ -1,8 +1,10 @@
-const express = require('express')
-const app = express()
+//const express = require('express')
+import * as express from 'express';
+import * as bodyParser from 'body-parser';
+
 const port = process.env.PORT || 3000;
-
-
+const app = express();
+app.use(bodyParser.json());
 
 app.get('/', (req, res, next):void => {
     res.send('Started running, True!');
